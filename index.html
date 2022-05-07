@@ -779,7 +779,6 @@ function funcNext()
     //$("#address_imgmyslider").removeAttr("href").attr("href", address_site);
     //$("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     change(currentItem);
-    //tableChange();
 }
 
 function funcPrev()
@@ -796,7 +795,6 @@ function funcPrev()
     //$("#address_imgmyslider").removeAttr("href").attr("href", address_site);
     //$("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     change(currentItem);
-    //tableChange();
 }
 
 function sleep(ms) {
@@ -812,6 +810,7 @@ function autolist() {
         $("#buttonPrev").attr("disabled", true);
         $("#timer").removeAttr("disabled");
         $("#timerSpan").removeAttr("disabled");
+        timerSpan.style.color = black;
         isRun = true;
         myslider();
     }else{
@@ -820,6 +819,7 @@ function autolist() {
         $("#buttonPrev").removeAttr("disabled");
         $("#timer").attr("disabled", true);
         $("#timerSpan").attr("disabled", true);
+        timerSpan.style.color = rgb(197, 197, 197);
         isRun = false;
     }
 }
