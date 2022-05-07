@@ -748,69 +748,6 @@ var urls = ["https://azbyka.ru/days/assets/img/icons/73/p1d5c5kmvt1ukl2osnab4cob
 "https://azbyka.ru/days/storage/images/icons-of-our-lady/345/p1bt6m8jbgedo1i9p98uu1f126k6.jpg",
 "https://azbyka.ru/days/storage/images/icons-of-our-lady/345/p1bt6m8jbh8ov4341v8112gl1nph8.jpg",
 "https://azbyka.ru/days/storage/images/icons-of-our-lady/345/p1bt6mtb9g17vg1j9m1bs5md6fs63.jpg"];
-    
-var first = urls[0];
-// p1d5c5kmvt1ukl2osnab4cob3i3.jpg
-
-var last = urls[urls.length - 1];
-// p1dfaf1108qv617km6c21qtpbhi7.jpg
-
-urls.forEach(function(item, index, array) {
-  console.log(item, index);
-});
-
-function funcButtonAdd(){
-    console.log("funcButtonAdd()");
-    myDivAdd.style.visibility="visible";
-}
-
-function buttonFormCancel(){
-    console.log("buttonFormCancel()");
-    myDivAdd.style.visibility="hidden";
-}
-
-function buttonFormAdd(){
-    console.log("buttonFormAdd()");
-    myDivAdd.style.visibility="hidden";
-    
-    console.log("addressForm.value = " + addressForm.value);
-    urls.push(addressForm.value);
-    sites.push(siteForm.value);
-    let num = urls.length - 1;
-    let tr = document.createElement("tr");
-    tr.innerHTML = '<td id="td-' + num + '" clicked="false" item="' + num + '" onclick="aclick(this);"><p>' + urls[urls.length - 1] + '</p></td>';
-    mytable.appendChild(tr);
-}
-
-function funcButtonRemove(){
-    console.log("funcButtonRemove()");
-    //urls[urls.length - 1];
-    document.getElementById('mytable').deleteRow(urls.length-1);
-    urls.pop();
-    sites.pop();
-    //document.getElementsById("td-"+urls.length-1).remove();
-    
-
-    
-    //let el = document.getElementById('td-' + urls.length - 1);
-    //el.remove(); // ?????? ??????? div ? ??????????????? 'div-02'
-    /*for(let i = 0; i < urls.length; i ++){
-        let el = document.getElementById('td-' + urls.length - 1);
-        el.remove(); // ?????? ??????? div ? ??????????????? 'div-02'
-    }*/
-    //urls[currentItem].splice(currentItem, 1);
-    //sites[currentItem].splice(currentItem, 1);
-    //mytable.
-}
-
-function clearAll() {
-    console.log("clearAll");
-    urls.splice(0, urls.length);
-    sites.splice(0, sites.length);
-    while(mytable.rows.length > 0) {
-        mytable.deleteRow(0);
-    }
-}
 
 function change(in_currentItem){
     currentItem = in_currentItem;
@@ -820,6 +757,7 @@ function change(in_currentItem){
     iconurl=urls[currentItem];
     address_site = sites[currentItem];
     img_title = stranicas[currentItem];
+    $().
     $("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     $("#address_imgmyslider").removeAttr("href").attr("href", address_site);
 }
@@ -845,52 +783,6 @@ function checkboxRandomPoryadokClick(){
     }*/
     
     //change();
-}
-
-function aclick(in_this) 
-{
-    console.log("aclick");
-    isClicked = true;
-    prevClickedItem = currentItem;
-    currentItem = in_this.getAttribute("item");
-    console.log("item = " + currentItem);
-    for( let i = 0; i < urls.length; i++){
-        $("#td-" + i).removeAttr("class");//.attr("class", "unclicked");
-    }
-    in_this.setAttribute("clicked", true);
-    in_this.setAttribute("class", "clicked");
-
-    //iconurl = urls[currentItem];
-    //address_site = sites[currentItem];
-    //$("#address_imgmyslider").removeAttr("href").attr("href", address_site);
-    //$("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
-    change(currentItem);
-}
-
-function addToTable()
-{
-    stranicas.forEach(function(item, index, array) {
-        console.log(item, index);
-        //var tr = document.createElement("tr");
-        //tr.innerHTML = '<td id="td-' + index + '" clicked="false" item="' + index + '" onclick="aclick(this);"><p>' + stranicas[index] + '</p></td>';
-        //mytable.appendChild(tr);
-        var p = document.createElement("p");
-        p.setAttribute("hidden", "hidden");
-        p.setAttribute("clicked", false);
-        p.innerHTML = stranicas[index];
-        div_carnav.appendChild(p);
-    });
-}
-
-function tableChange()
-{
-    console.log("tableChange");
-    for( let i = 0; i < urls.length; i++){
-        $("#td-" + i).removeAttr("class");//.attr("class", "unclicked");
-    }
-    $("#td-" + currentItem).removeAttr("class").attr("class", "clicked");
-    //$("#td-" + currentItem).focus();
-    //document.getElementById("#td-20").focus();
 }
 
 function timerChange()
@@ -1076,18 +968,6 @@ async function myslider(){
 
 <div class="cont clearfix">
 
-    <div id="myDivAdd" >
-        <p>
-        <label>????????: </label>
-        <input id="addressForm" type="text" name="q" value="addressFormValue" />
-        </p>
-        <p><label>???? ?????: </label>
-        <input id="siteForm" type="text" name="q" value="siteFormValue"/>
-        </p>
-        <button id="btnFormAdd" onclick="buttonFormAdd();">????????</button>
-        <button id="btnFormCancel" onclick="buttonFormCancel();">????????</button>
-    </div>
-
     <div id="div_carnav" class="car-nav">
         <button id="buttonSkrytb" onclick="skrytb();" value=">">></button>
         <button id="buttonOtkrytb" onclick="otkrytb();" value=""><</button>
@@ -1103,26 +983,14 @@ async function myslider(){
             <span>Таймер</span>
             <INPUT id="timer" TYPE="RANGE" MIN="1000" MAX="10000" STEP="500" onchange="timerChange();" VALUE="5000">
         </p>
-            
-        <!-- <p>??????: ??????? ?????</p> -->
-        <!--<button id="clearAllButton" onclick="clearAll();">????????</button>
-        <button id="addButton" onclick="funcButtonAdd();" value="+">+</button>
-        <button id="removeButton" onclick="funcButtonRemove();" value="-">-</button>-->
-        
-        <!--<div>
 
-            <table id="mytable">
-                <tr></tr>
-            </table>
-        </div> -->
-            
     </div>
 
     <div id="slider">
         <div class="slideshow"></div>
             <div id="div_loadmyslider">
                 <a id="address_imgmyslider" href="https://azbyka.ru/days/menology/ikons">
-                    <img id="img_loadmyslider" src="https://azbyka.ru/days/assets/img/icons/73/preview_200_200__p1dfaf1108qv617km6c21qtpbhi7.png?1580841436"/>
+                    <img id="img_loadmyslider" title="" src="https://azbyka.ru/days/assets/img/icons/73/preview_200_200__p1dfaf1108qv617km6c21qtpbhi7.png?1580841436"/>
                 </a>
             </div>
         </div>
