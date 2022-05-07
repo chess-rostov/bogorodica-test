@@ -944,9 +944,9 @@ async function myslider(){
             <input id="checkboxAutolist" type="checkbox" checked="checked" onclick="autolist();">авто</input>
             <input id="checkboxRandomPoryadok" type="checkbox" onclick="checkboxRandomPoryadokClick();">случайная</input>
         </p>
-        <p id="pButton">
-            <button id="buttonPrev" onclick="funcPrev();" disabled>назад</button>
-            <button id="buttonNext" onclick="funcNext();" disabled>вперед</button>
+        <p id="pButton" display="none" hidden="hidden">
+            <button id="buttonPrev" onclick="funcPrev();" disabled><</button>
+            <button id="buttonNext" onclick="funcNext();" disabled>></button>
         </p>
         <p id="pTimer">
             <span id="timerSpan" unselectable="on">Таймер</span>
@@ -962,8 +962,8 @@ async function myslider(){
             <input id="checkboxRandomPoryadok" type="checkbox" onclick="checkboxRandomPoryadokClick();">случайная</input>
         </p>
         <p>
-            <button id="buttonPrev" onclick="funcPrev();" disabled>назад</button>
-            <button id="buttonNext" onclick="funcNext();" disabled>вперед</button>
+            <button id="buttonPrev" onclick="funcPrev();" disabled><</button>
+            <button id="buttonNext" onclick="funcNext();" disabled>></button>
         </p>
         <p>
             <span id="timerSpan" unselectable="on">Таймер</span>
