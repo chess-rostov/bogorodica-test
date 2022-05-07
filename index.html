@@ -813,7 +813,7 @@ function autolist() {
         $("#buttonPrev").attr("disabled", true);
         $("#timer").removeAttr("disabled");
         $("#timerSpan").removeAttr("disabled");
-        timerSpan.style.color = black;
+        timerSpan.style.color = "black";
         isRun = true;
         myslider();
     }else{
@@ -822,7 +822,7 @@ function autolist() {
         $("#buttonPrev").removeAttr("disabled");
         $("#timer").attr("disabled", true);
         $("#timerSpan").attr("disabled", true);
-        timerSpan.style.color = rgb(197, 197, 197);
+        timerSpan.style.color = "rgb(197, 197, 197)";
         isRun = false;
     }
 }
@@ -879,10 +879,9 @@ async function myslider(){
             }*/
             
             change(currentItem);
-            //tableChange();
-            /*$("#mytable tr td .currentItem").*/
             console.log(iconurl);
             console.log(address_site);
+            console.log(img_
             await sleep(timerValue);
             if(isRun)
                 currentItem++;
