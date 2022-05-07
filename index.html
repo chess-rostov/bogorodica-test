@@ -68,6 +68,18 @@ body {
     /*overflow-y: hidden;*/
 }
     
+#left {
+    width: 30%;
+    left: 0;
+    text-align: left;
+}
+    
+#right {
+    width: 30%;
+    right: 0;
+    text-align: right;
+}
+    
 #pTimer {
     visibility: 'visible';
 }
@@ -719,26 +731,12 @@ function getRandomInt(max) {
 
 function checkboxRandomPoryadokClick(){
     console.log("checkboxRandomPoryadokClick()");
-    //let num = getRandomInt(urls.length);
-    //currentItem = num;
-    //console.log("currentItem = " + currentItem);
     flagRandomPoryadok = checkboxRandomPoryadok.checked;
     console.log("flagRandomPoryadok = " + flagRandomPoryadok);
-    /*if(checkboxRandomPoryadokClick.checked){
-        flagRandomPoryadok = true;
-        console.log("flagRandomPoryadok = " + flagRandomPoryadok);
-        
-    }else{
-        flagRandomPoryadok = false;
-        console.log("flagRandomPoryadok = " + flagRandomPoryadok);
-    }*/
-    
-    //change();
 }
 
 function timerChange()
 {
-    //alert(this.value);
     console.log("timerChange()");
     timerValue = timer.value;
     console.log("timer.value = " + timer.value);
@@ -928,6 +926,8 @@ async function myslider(){
 <div id="fullSlider">
 
     <div id="slider">
+        <div id="left"></div
+        <div id="right"></div>
         <div class="slideshow"></div>
             <div id="div_loadmyslider">
                 <a id="address_imgmyslider" href="https://azbyka.ru/days/menology/ikons">
