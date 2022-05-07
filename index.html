@@ -67,22 +67,6 @@ body {
     /*overflow-y: hidden;*/
 }
 
-#addressForm {
-    width: 100%;
-}
-
-#siteForm {
-    width: 100%;
-}
-
-#myDivAdd {
-    visibility: hidden;/*visible;*/
-    background: white;
-    /*width: 50%;*/
-    z-index: 10;
-    position: absolute;
-    width: 50%;
-}
 
 #div_loadmyslider/*, 
 #address_imgmyslider, 
@@ -111,57 +95,6 @@ body {
     font-size: 300%;
 }
 
-#mytable tr td.clicked {
-    background: yellow;
-}
-
-#mytable {
-    /*height: fixed;*/
-    border: 1px solid black;
-    table-layout: fixed;
-    width:100%;
-    /*display: table-cell;*/
-    /*display: flex;*/
-}
-
-#mytable tr {
-    /*display: table-cell;*/
-}
-
-#mytable tr td {
-    background-color: white;
-    word-wrap:break-word;
-    display: table-cell;
-    cursor: pointer;
-    font-size: 200%;
-}
-
-#mytable tr td .currentItem {
-    background-color: yellow;
-    /*word-wrap:break-word;
-    display: table-cell;*/
-}
-
-div#div_carnav {
-    margin: -10px 0;
-    padding: 20px;
-    width: 20%;
-    height: 90%;
-    background: white;
-    border-left: 1px solid black;
-    text-align: right;
-    /*display: inline-block;*/
-    position: absolute;
-    float: right;
-    right: 0;
-    visibility: 'visible';
-}
-
-a.group1 img
-{
-    padding-bottom: 20px;
-    /*margin-bottom: 20px;*/
-}
 
 img {
     max-width:auto; 
@@ -757,7 +690,7 @@ function change(in_currentItem){
     iconurl=urls[currentItem];
     address_site = sites[currentItem];
     img_title = stranicas[currentItem];
-    $().
+    $("#img_loadmyslider").removeAttr("title").attr("title", img_title);
     $("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     $("#address_imgmyslider").removeAttr("href").attr("href", address_site);
 }
