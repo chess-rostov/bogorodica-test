@@ -142,13 +142,6 @@ body {
     display: table-cell;*/
 }
 
-.scroll-table-body {
-    /*display: flex;*/
-    height: 250px;
-    overflow-x: auto;
-}
-
-
 div#div_carnav {
     margin: -10px 0;
     padding: 20px;
@@ -785,7 +778,6 @@ function buttonFormAdd(){
     let num = urls.length - 1;
     let tr = document.createElement("tr");
     tr.innerHTML = '<td id="td-' + num + '" clicked="false" item="' + num + '" onclick="aclick(this);"><p>' + urls[urls.length - 1] + '</p></td>';
-    //tr.innerHTML = '<td id="td-' + index + '" clicked="false" item="' + index + '" onclick="aclick(this);"><p>' + urls[index] + '</p></td>';
     mytable.appendChild(tr);
 }
 
@@ -877,10 +869,12 @@ function addToTable()
 {
     stranicas.forEach(function(item, index, array) {
         console.log(item, index);
-        var tr = document.createElement("tr");
-        //tr.innerHTML = '<td onclick="aclick();"><a href="' + urls[index] + '" >' + urls[index] + '</a></td>';
-        tr.innerHTML = '<td id="td-' + index + '" clicked="false" item="' + index + '" onclick="aclick(this);"><p>' + stranicas[index] + '</p></td>';
-        mytable.appendChild(tr);
+        //var tr = document.createElement("tr");
+        //tr.innerHTML = '<td id="td-' + index + '" clicked="false" item="' + index + '" onclick="aclick(this);"><p>' + stranicas[index] + '</p></td>';
+        //mytable.appendChild(tr);
+        var p = document.createElement("p");
+        p.innerHTML = stranicas[index];
+        div_carnav.appendChild(p);
     });
 }
 
@@ -1110,12 +1104,14 @@ async function myslider(){
         <!--<button id="clearAllButton" onclick="clearAll();">????????</button>
         <button id="addButton" onclick="funcButtonAdd();" value="+">+</button>
         <button id="removeButton" onclick="funcButtonRemove();" value="-">-</button>-->
-        <div class="scroll-table-body">
+        
+        <!--<div>
 
             <table id="mytable">
                 <tr></tr>
             </table>
-        </div>
+        </div> -->
+            
     </div>
 
     <div id="slider">
