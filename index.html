@@ -190,6 +190,7 @@ img {
 var isRun = true;
 var iconurl = '';
 var address_site = '';
+var img_title = '';
 var currentItem = 0;
 var timerValue = 5000;
 var flagSkrytb = false;
@@ -818,6 +819,7 @@ function change(in_currentItem){
     }
     iconurl=urls[currentItem];
     address_site = sites[currentItem];
+    img_title = stranicas[currentItem];
     $("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     $("#address_imgmyslider").removeAttr("href").attr("href", address_site);
 }
