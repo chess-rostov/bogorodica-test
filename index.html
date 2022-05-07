@@ -12,6 +12,7 @@
                                Леушинская,
                                Азовская,
                                Икона Богородицы Акафистная Зографская (Предвозвестительница),
+                               Акафистная,
                                Зографская,
                                Предвозвестительница,
                                Акафистная,
@@ -778,7 +779,7 @@ function funcNext()
     //$("#address_imgmyslider").removeAttr("href").attr("href", address_site);
     //$("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     change(currentItem);
-    tableChange();
+    //tableChange();
 }
 
 function funcPrev()
@@ -795,7 +796,7 @@ function funcPrev()
     //$("#address_imgmyslider").removeAttr("href").attr("href", address_site);
     //$("#img_loadmyslider").removeAttr("src").attr("src", iconurl);
     change(currentItem);
-    tableChange();
+    //tableChange();
 }
 
 function sleep(ms) {
@@ -809,16 +810,16 @@ function autolist() {
         console.log("checked");
         $("#buttonNext").attr("disabled", true);
         $("#buttonPrev").attr("disabled", true);
-        $("#timer").attr("disabled", true);
-        $("#timerSpan").attr("disabled", true);
+        $("#timer").removeAttr("disabled");
+        $("#timerSpan").removeAttr("disabled");
         isRun = true;
         myslider();
     }else{
         console.log("unchecked");
         $("#buttonNext").removeAttr("disabled");
         $("#buttonPrev").removeAttr("disabled");
-        $("#timer").removeAttr("disabled");
-        $("#timerSpan").removeAttr("disabled");
+        $("#timer").attr("disabled", true);
+        $("#timerSpan").attr("disabled", true);
         isRun = false;
     }
 }
@@ -826,7 +827,7 @@ function autolist() {
 
 
 async function myslider(){
-    console.log('????????????, ????????? ?????, ??????????? ????, ??????????');
+    console.log('myslider');
 
     //let i = 0;
     //currentItem = 0;
