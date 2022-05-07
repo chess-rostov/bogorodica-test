@@ -921,9 +921,24 @@ async function myslider(){
                 </a>
             </div>
         </div>
+    
+        <button id="buttonSkrytb" onclick="skrytb();" value=">">></button>
+        <button id="buttonOtkrytb" onclick="otkrytb();" value=""><</button>
+        <p>
+            <input id="checkboxAutolist" type="checkbox" checked="checked" onclick="autolist();">авто</input>
+            <input id="checkboxRandomPoryadok" type="checkbox" onclick="checkboxRandomPoryadokClick();">случайная</input>
+        </p>
+        <p>
+            <button id="buttonPrev" onclick="funcPrev();" disabled>назад</button>
+            <button id="buttonNext" onclick="funcNext();" disabled>вперед</button>
+        </p>
+        <p>
+            <span id="timerSpan" unselectable="on">Таймер</span>
+            <input id="timer" TYPE="RANGE" MIN="1000" MAX="15000" STEP="1000" onchange="timerChange();" VALUE="5000">
+        </p>
     </div>
     
-    <div id="div_carnav">
+    <!-- <div id="div_carnav">
         <button id="buttonSkrytb" onclick="skrytb();" value=">">></button>
         <button id="buttonOtkrytb" onclick="otkrytb();" value=""><</button>
         <p>
@@ -939,19 +954,12 @@ async function myslider(){
             <input id="timer" TYPE="RANGE" MIN="1000" MAX="15000" STEP="1000" onchange="timerChange();" VALUE="5000">
         </p>
 
-    </div>
+    </div> -->
 
 </div>
-
-<style>
-
-</style>
-
 <script>
 
 window.onload = function() {
-    // ??? ??????
-    //addToTable();
     currentItem = 0;
     myslider();
 };
