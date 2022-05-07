@@ -875,6 +875,8 @@ function addToTable()
         //tr.innerHTML = '<td id="td-' + index + '" clicked="false" item="' + index + '" onclick="aclick(this);"><p>' + stranicas[index] + '</p></td>';
         //mytable.appendChild(tr);
         var p = document.createElement("p");
+        p.setAttribute("hidden", "hidden");
+        p.setAttribute("clicked", false);
         p.innerHTML = stranicas[index];
         div_carnav.appendChild(p);
     });
