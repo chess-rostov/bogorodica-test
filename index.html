@@ -67,6 +67,14 @@ body {
     font-size: 150%;
     /*overflow-y: hidden;*/
 }
+    
+#pTimer {
+    visibility: 'visible';
+}
+    
+#pButton {
+    visibility: 'hidden';
+}
 
 #timerSpan {
     color: black;    
@@ -740,7 +748,7 @@ function otkrytb() {
     console.log("otkrytb");
     if(flagSkrytb){
         flagSkrytb = false;
-        div_carnav.style.visibility="visible";
+        //div_carnav.style.visibility="visible";
         buttonSkrytb.style.visibility='visible';
         buttonOtkrytb.style.visibility='hidden';
     }else{
@@ -756,7 +764,7 @@ function skrytb() {
         
     }else{
         flagSkrytb = true;
-        div_carnav.style.visibility="hidden";
+        //div_carnav.style.visibility="hidden";
         buttonOtkrytb.style.visibility="visible";
         buttonSkrytb.style.visibility="hidden";
     }
@@ -820,6 +828,10 @@ function autolist() {
         $("#timer").removeAttr("disabled");
         $("#timerSpan").removeAttr("disabled");
         timerSpan.style.color = "black";
+        //buttonSkrytb.style.visibility='visible';
+        //buttonOtkrytb.style.visibility='hidden';
+        pButton.style.visibility='hidden';
+        pTimer.style.visibility='visible';
         isRun = true;
         myslider();
     }else{
@@ -829,6 +841,8 @@ function autolist() {
         $("#timer").attr("disabled", true);
         $("#timerSpan").attr("disabled", true);
         timerSpan.style.color = "rgb(197, 197, 197)";
+        pButton.style.visibility='visible';
+        pTimer.style.visibility='hidden'
         isRun = false;
     }
 }
@@ -922,7 +936,7 @@ async function myslider(){
             </div>
         </div>
     
-        <p>
+        <p hidden="hidden">
             <button id="buttonSkrytb" onclick="skrytb();" value=">">></button>
             <button id="buttonOtkrytb" onclick="otkrytb();" value=""><</button>
         </p>
@@ -930,11 +944,11 @@ async function myslider(){
             <input id="checkboxAutolist" type="checkbox" checked="checked" onclick="autolist();">авто</input>
             <input id="checkboxRandomPoryadok" type="checkbox" onclick="checkboxRandomPoryadokClick();">случайная</input>
         </p>
-        <p>
+        <p id="pButton">
             <button id="buttonPrev" onclick="funcPrev();" disabled>назад</button>
             <button id="buttonNext" onclick="funcNext();" disabled>вперед</button>
         </p>
-        <p>
+        <p id="pTimer">
             <span id="timerSpan" unselectable="on">Таймер</span>
             <input id="timer" TYPE="RANGE" MIN="1000" MAX="15000" STEP="1000" onchange="timerChange();" VALUE="5000">
         </p>
