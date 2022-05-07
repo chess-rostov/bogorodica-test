@@ -809,13 +809,16 @@ function autolist() {
         console.log("checked");
         $("#buttonNext").attr("disabled", true);
         $("#buttonPrev").attr("disabled", true);
+        $("#timer").attr("disabled", true);
+        $("#timerSpan").attr("disabled", true);
         isRun = true;
         myslider();
     }else{
         console.log("unchecked");
         $("#buttonNext").removeAttr("disabled");
         $("#buttonPrev").removeAttr("disabled");
-
+        $("#timer").removeAttr("disabled");
+        $("#timerSpan").removeAttr("disabled");
         isRun = false;
     }
 }
@@ -913,8 +916,8 @@ async function myslider(){
             <button id="buttonNext" onclick="funcNext();" disabled>вперед</button>
         </p>
         <p>
-            <span>Таймер</span>
-            <INPUT id="timer" TYPE="RANGE" MIN="1000" MAX="10000" STEP="500" onchange="timerChange();" VALUE="5000">
+            <span id="timerSpan">Таймер</span>
+            <input id="timer" TYPE="RANGE" MIN="1000" MAX="10000" STEP="500" onchange="timerChange();" VALUE="5000">
         </p>
 
     </div>
